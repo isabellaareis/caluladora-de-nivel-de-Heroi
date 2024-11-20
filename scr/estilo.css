@@ -1,0 +1,164 @@
+/* Estilo geral */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #000836;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+/* Container principal */
+.main-container {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Lado esquerdo: formulário */
+.form-container {
+    flex: 1;
+    background-color: #1c2c4a; /* Azul escuro inspirado na imagem */
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    border-right: 1px solid #333;
+}
+.form-container h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #4dabf7; /* Azul claro para contraste */
+    margin-bottom: 40px; /* Adiciona espaçamento abaixo do h1 para o formulário */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #3b517d; /* Azul médio para borda */
+    border-radius: 8px;
+    background-color: #253857; /* Azul mais escuro */
+    color: #ffffff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4dabf7;
+    box-shadow: 0 0 5px #4dabf7;
+}
+
+button {
+    background-color: #4dabf7; /* Azul claro */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e81ce; /* Azul mais intenso no hover */
+    box-shadow: 0 4px 15px rgba(30, 129, 206, 0.4);
+}
+
+
+/* Lado direito: imagem */
+.image-container {
+    flex: 1;
+    background-image: url('./images/GatSLRDX0AAsKKN.jpeg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.85);
+    position: relative;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form-container {
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+
+    .image-container {
+        height: 300px;
+    }
+}
+
+
+/*MODAL*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fundo semitransparente */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 4px solid  rgba(30, 129, 206, 0.4);
+    border-radius: 20px;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    position: relative; /* Importante para o botão de fechar ser posicionado dentro */
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: rgb(0, 2, 105);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo do texto do resultado */
+#resultado {
+   letter-spacing: 0.05em;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #003366; /* Azul escuro */
+}
